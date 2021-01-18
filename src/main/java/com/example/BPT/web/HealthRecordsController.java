@@ -31,7 +31,7 @@ public class HealthRecordsController {
 	// Home page
 	@RequestMapping(value = { "/", "/home" })
 	public String recordList(Model model) {
-		model.addAttribute("bprecords", repository.findAll());
+		model.addAttribute("bprecords", repository.findByOrderByDateDesc());
 		return "home";
 	}
 
